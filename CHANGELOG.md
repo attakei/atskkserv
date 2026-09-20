@@ -1,5 +1,22 @@
 現行マイルストーンでの更新:
 
+## v0.1.1
+
+2026-09-21 (Asia/Tokyo)
+
+### 不具合等の修正
+
+- `serve` コマンド
+  - `REQUEST` メッセージに対する「変換候補なし」のケースにおいて、終端文字を含めるようにする。
+    ([GitHub#5](https://github.com/attakei/atskkserv/pull/5))
+
+### その他
+
+- `serve` コマンド
+  - `REQUEST` メッセージの受信中のデバッグ用ログをint表現にする。
+- ドキュメント
+  - https://atskkserv.attakei.dev をデプロイ先とする。
+
 ## v0.1.0
 
 2026-09-16 (Asia/Tokyo)
