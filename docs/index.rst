@@ -4,7 +4,7 @@ Home
 .. raw:: html
 
    <style>
-      h1 { display: none; }
+      .body h1 { display: none; }
    </style>
 
 Nim言語製のSKK辞書サーバーです。 [#f1]_

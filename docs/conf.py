@@ -22,3 +22,5 @@ language = "ja"
 # -- Options for HTML output
 html_theme = "piccolo_theme"
 html_static_path = ["_static"]
+html_title = f"{project} v{release}"
+html_short_title = html_title
