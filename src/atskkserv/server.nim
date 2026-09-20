@@ -79,7 +79,7 @@ proc processClient(client: AsyncSocket) {.async.} =
         )
       else:
         debug "Candicates are not found"
-        await client.send("$1$2 " % [$LookupCode.NOT_FOUND, body])
+        await client.send("$1$2 \n" % [$LookupCode.NOT_FOUND, body])
     of CommandCode.VERSION:
       debug "Receive 'VERSION' command"
       await client.send("atskkserv/0.0.0 ")
