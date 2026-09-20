@@ -23,3 +23,4 @@ Nim言語製のSKK辞書サーバーです。 [#f1]_
    usage
    milestones
    skk-spec/index
+   glossary
