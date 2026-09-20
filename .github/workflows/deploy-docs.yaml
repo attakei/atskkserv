@@ -32,8 +32,8 @@ jobs:
         run: |
           task --yes docs:build-dirhtml
       - name: Publish
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy docs/_build/dirhtml --project-name=${{ secrets.CLOUDFLARE_PAGES_NAME }} --branch=${{ inputs.version }}
+          command: deploy --message "docs release ${{ inputs.version }}"
