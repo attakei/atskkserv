@@ -31,5 +31,5 @@ task bundle, "Bundle resources for distribution":
     let src = binDir & "/" & b & binExt
     let dst = bundleDir & DirSep & b & binExt
     cpFile(src, dst)
-  for f in @["LICENSE", "README.rst"]:
+  for f in @["LICENSE", "README.md"]:
     cpFile(f, bundleDir & DirSep & f)
