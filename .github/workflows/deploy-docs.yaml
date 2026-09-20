@@ -2,7 +2,17 @@ name: 'Deployment document'
 
 on:
   workflow_call:
+    inputs:
+      version:
+        description: 'Emulate version (require "v" prefix)'
+        required: true
+        type: string
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Emulate version (require "v" prefix)'
+        required: true
+        type: string
 
 jobs:
   deploy-docs:
@@ -26,4 +36,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy docs/_build/dirhtml --project-name=${{ secrets.CLOUDFLARE_PAGES_NAME }} --branch=main
+          command: pages deploy docs/_build/dirhtml --project-name=${{ secrets.CLOUDFLARE_PAGES_NAME }} --branch=${{ inputs.version }}

@@ -15,11 +15,21 @@ permissions:
   contents: write
 
 jobs:
+  setup:
+    runs-on: 'ubuntu-latest'
+    outputs:
+      version: '${{ steps.vars.outputs.version }}'
+    steps:
+      - name: 'Configure variables'
+        id: vars
+        run: |
+          echo "version=${{ inputs.version || github.ref_name }}" >> "$GITHUB_OUTPUT"
   build:
+    needs: ['setup']
     runs-on: ${{ matrix.vm }}
     env:
-      package_name: 'atskkserv-${{ inputs.version || github.ref_name }}'
-      dist_name: 'atskkserv-${{ inputs.version || github.ref_name }}_${{ matrix.os_name }}_${{ matrix.cpu_name }}'
+      package_name: 'atskkserv-${{ needs.setup.outputs.version }}'
+      dist_name: 'atskkserv-${{ needs.setup.outputs.version }}_${{ matrix.os_name }}_${{ matrix.cpu_name }}'
     strategy:
       matrix:
         include:
@@ -80,6 +90,8 @@ jobs:
           prerelease: false
   deploy-docs:
     if: ${{ github.event_name != 'workflow_dispatch' }}
-    needs: [build]
+    needs: ['setup', 'build']
     uses: './.github/workflows/deploy-docs.yaml'
+    with:
+      version: ${{ needs.setup.outputs.version }}
     secrets: inherit
