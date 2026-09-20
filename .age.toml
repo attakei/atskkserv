@@ -25,13 +25,13 @@ replace = """
 
 {{nowFormat.dateISO}} (Asia/Tokyo)
 
-### Breaking changes
+### 破壊的変更
 
-### Features
+### 機能の追加、更新
 
-### Fixes
+### 不具合等の修正
 
-### Others
+### その他
 
 ## v{{current_version}}
 """
@@ -41,11 +41,11 @@ replace = """
 path = ".github/release-body.md"
 regex = true
 search = """
-- Changelog is https://github.com/attakei/atskkserv/blob/v{{current_version}}/CHANGELOG.md
-- Source changes is (.+)
+- 更新履歴は https://github.com/attakei/atskkserv/blob/v{{current_version}}/CHANGELOG.md を参照してください。
+- リポジトリの差分は (.+)
 """
 replace = """
-- Changelog is https://github.com/attakei/atskkserv/blob/v{{new_version}}/CHANGELOG.md
-- Source changes is https://github.com/attakei/atskkserv/compare/v{{current_version}}...v{{new_version}}
+- 更新履歴は https://github.com/attakei/atskkserv/blob/v{{new_version}}/CHANGELOG.md を参照してください。
+- リポジトリの差分は https://github.com/attakei/atskkserv/compare/v{{current_version}}...v{{new_version}} を参照してください。
 """
 
