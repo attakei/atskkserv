@@ -22,4 +22,4 @@ Nim言語製のSKK辞書サーバーです。 [#f1]_
 
    usage
    milestones
-   skk/index
+   skk-spec/index
