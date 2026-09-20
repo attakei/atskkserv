@@ -1,5 +1,5 @@
 ## サーバープロセスの処理
-import std/[asyncnet, asyncdispatch, encodings, options, strutils]
+import std/[asyncnet, asyncdispatch, encodings, options, sequtils, strutils]
 import chronicles
 
 import ./engine
@@ -69,7 +69,7 @@ proc processClient(client: AsyncSocket) {.async.} =
       let
         body = command.get().body
         ubody = convert(body, "utf-8", "euc-jp")
-      debug "Receive 'REQUEST' command", body = ubody
+      debug "Receive 'REQUEST' command", body = cast[seq[byte]](body)
       let candicates = searchEngine.lookup(ubody)
       if candicates.len > 0:
         debug "Candicates are found", num = candicates.len
