@@ -17,10 +17,10 @@ replace = "release = \"{{new_version}}\""
 
 [[files]]
 path = "CHANGELOG.md"
-search = "Current changes:"
+search = """
+## v{{current_version}}
+"""
 replace = """
-Current changes:
-
 ## v{{new_version}}
 
 {{nowFormat.dateISO}} (Asia/Tokyo)
@@ -32,6 +32,8 @@ Current changes:
 ### Fixes
 
 ### Others
+
+## v{{current_version}}
 """
 
 # This file has other replace target, but currently not supported.
