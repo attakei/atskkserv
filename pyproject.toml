@@ -11,6 +11,7 @@ dev = [
     { include-group = "docs" },
     { include-group = "lint" },
     { include-group = "test" },
+    "esbonio>=2.1.0",
 ]
 docs = [
     "atsphinx-footnotes>=0.3.2",
