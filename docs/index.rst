@@ -18,10 +18,24 @@ Nim言語製のSKK辞書サーバーです。 [#f1]_
 .. [#f1] 主に個人使用している言語がPython, Nimで、今回は速度と可搬性の観点からNimを採用しています。
 
 .. toctree::
-   :maxdepth: 1
+   :caption: atskkserv
+   :maxdepth: 2
+   :titlesonly:
 
    usage
    milestones
    changelog
+
+.. toctree::
+   :caption: SKK
+   :maxdepth: 2
+
    skk-spec/index
+
+.. toctree::
+   :caption: その他
+   :hidden:
+   :maxdepth: 1
+
    glossary
+   genindex
