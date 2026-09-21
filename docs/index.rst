@@ -23,6 +23,7 @@ Nim言語製のSKK辞書サーバーです。 [#f1]_
    :titlesonly:
 
    usage
+   command/index
    milestones
    changelog
 
