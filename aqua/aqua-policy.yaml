@@ -10,13 +10,11 @@
 registries:
   - type: standard
     ref: semver(">= 4.0.0")
-  - name: local/nimlangserver
-    type: local
-    path: ./registry-nimlangserver.yaml
-  - name: local/nph
-    type: local
-    path: ./registry-nph.yaml
+  - name: nimble-tools
+    type: github_content
+    repo_owner: attakei
+    repo_name: nimble-tools
+    path: registry.yaml
 packages:
   - registry: standard
-  - registry: local/nimlangserver
-  - registry: local/nph
+  - registry: nimble-tools
